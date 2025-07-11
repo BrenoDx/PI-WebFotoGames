@@ -18,4 +18,5 @@ fotogames\DAO\OrcamentoProdutoDAO.class
 fotogames\DAO\OrcamentoDAO.class
 fotogames\main\WebFotoGames.class
 fotogames\entidades\Cliente.class
+fotogames\servico\Validacao.class
 fotogames\DAO\SegurancaDAO.class
