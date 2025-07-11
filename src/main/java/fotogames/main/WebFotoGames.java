@@ -14,6 +14,7 @@ import fotogames.entidades.Jogo;
 import fotogames.entidades.Produto;
 import fotogames.entidades.Venda;
 import fotogames.entidades.VendaProduto;
+import fotogames.servico.Validacao;
 import java.sql.Date;
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -206,16 +207,18 @@ public class WebFotoGames {
                     }
                 } else if (opcao == 9) {
                     sc.nextLine();
+                    Validacao validacao = new Validacao();
 
-                    System.out.println("Nome do cliente");
-                    cliente.setNome(sc.nextLine());
-                    System.out.println("Informe seu CPF");
-                    cliente.setCpf(sc.nextLine());
-                    System.out.println("Informe seu email");
-                    cliente.setEmail(sc.nextLine());
-                    System.out.println("Informe seu telefone");
-                    cliente.setTelefone(sc.nextLine());
-                    
+                    do {
+                        System.out.println("Nome do cliente");
+                        cliente.setNome(sc.nextLine());
+                        System.out.println("Informe seu CPF");
+                        cliente.setCpf(sc.nextLine());
+                        System.out.println("Informe seu email");
+                        cliente.setEmail(sc.nextLine());
+                        System.out.println("Informe seu telefone");
+                        cliente.setTelefone(sc.nextLine());
+                    } while (validacao.cliente(cliente.getCpf(), cliente.getEmail(), cliente.getTelefone()));
                     clienteDAO.cadastrar(cliente);
                 } else {
                     System.out.println("Opcao invalida");
