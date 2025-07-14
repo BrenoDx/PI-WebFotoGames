@@ -218,7 +218,7 @@ public class WebFotoGames {
                         cliente.setEmail(sc.nextLine());
                         System.out.println("Informe seu telefone");
                         cliente.setTelefone(sc.nextLine());
-                    } while (validacao.cliente(cliente.getCpf(), cliente.getEmail(), cliente.getTelefone()));
+                    } while (!validacao.cliente(cliente.getCpf(), cliente.getEmail(), cliente.getTelefone()));
                     clienteDAO.cadastrar(cliente);
                 } else {
                     System.out.println("Opcao invalida");
